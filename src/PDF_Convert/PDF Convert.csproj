@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CF2B20E-6634-405E-9316-2803888D9853}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>PDF Convert</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="Aspose.Pdf">
+      <HintPath>.\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>.\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>.\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Slides">
+      <HintPath>.\Aspose.Slides.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.XML" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="PDF_Convert\buyDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\configDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\Convert.cs" />
+    <Compile Include="PDF_Convert\Encrypt.cs" />
+    <Compile Include="PDF_Convert\mainDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\mainDlg_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\ListViewIndexComparer.cs" />
+    <Compile Include="PDF_Convert\passwordDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\Program.cs" />
+    <Compile Include="PDF_Convert\reg.cs" />
+    <Compile Include="PDF_Convert\ini_config.cs" />
+    <Compile Include="PDF_Convert\registry.cs" />
+    <Compile Include="PDF_Convert\regDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\Version.cs" />
+    <Compile Include="PDF_Convert\Common.cs" />
+    <Compile Include="PDF_Convert\welcomeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF_Convert\Properties\Resources.cs" />
+    <Compile Include="PDF_Convert\Properties\Settings.cs" />
+    <EmbeddedResource Include="PDF_Convert.buyDlg.resources" />
+    <EmbeddedResource Include="PDF_Convert.configDlg.resources" />
+    <EmbeddedResource Include="PDF_Convert.mainDlg.resources" />
+    <EmbeddedResource Include="PDF_Convert.mainDlg_A.resources" />
+    <EmbeddedResource Include="PDF_Convert.passwordDlg.resources" />
+    <EmbeddedResource Include="PDF_Convert.Properties.Resources.resources" />
+    <EmbeddedResource Include="PDF_Convert.regDlg.resources" />
+    <EmbeddedResource Include="PDF_Convert.Update.resources" />
+    <EmbeddedResource Include="PDF_Convert.welcomeDlg.resources" />
+  </ItemGroup>
+</Project>
