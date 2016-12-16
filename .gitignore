@@ -1,0 +1,5 @@
+*.pdb
+*.ilk
+/src/HerbGather/*.suo
+/src/HerbGather/*.ncb
+*.user

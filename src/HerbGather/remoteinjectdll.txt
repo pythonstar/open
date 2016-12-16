@@ -1,0 +1,73 @@
+BOOL CHookTestDlg::Inject()
+{
+	#pragma pack(1)
+	typedef struct TInjectCode 
+	{
+		BYTE Push;	//0x68
+		DWORD Addr;
+		BYTE Call;	//0x0E8
+		DWORD pLoadLibrary;
+		BYTE Retn;	//0x0C3
+		char szLibPath[MAX_PATH];
+	};
+
+	HANDLE	hThread;
+	TInjectCode InjectCode;
+	void*   pLibRemote;             // szLibPath 将要复制到地址
+	DWORD   hLibModule;				//已加载的DLL的基地址（HMODULE）;
+
+	InjectCode.Push=0x68;
+	InjectCode.Call=0x0E8;
+	InjectCode.Retn=0X0C3;
+	GetModuleFileName(NULL,InjectCode.szLibPath,sizeof(InjectCode.szLibPath));
+	strcpy(&strrchr(InjectCode.szLibPath,'\\')[1],"Hook.dll");
+
+	//初始化 szLibPath
+	//...
+
+	//LoadLibrary(InjectCode.szLibPath);
+
+	// 1. 在远程进程中为szLibPath 分配内存
+	// 2. 写szLibPath到分配的内存
+	pLibRemote=::VirtualAllocEx(m_hProcess,NULL,sizeof(InjectCode),MEM_COMMIT,PAGE_EXECUTE_READWRITE);
+	InjectCode.Addr=DWORD(pLibRemote)+11;
+	InjectCode.pLoadLibrary=(DWORD)LoadLibrary-(DWORD(pLibRemote)+5)-5;
+	::WriteProcessMemory(m_hProcess,pLibRemote,(void*)&InjectCode,sizeof(InjectCode),NULL);
+
+
+	//通过 CreateRemoteThread & LoadLibrary 加载dll到远程进程
+	hThread = ::CreateRemoteThread( m_hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)pLibRemote,0, 0, NULL );
+	::WaitForSingleObject( hThread, INFINITE );
+
+	//取得DLL的基地址
+	::GetExitCodeThread( hThread, &hLibModule );
+
+	//扫尾工作
+	::CloseHandle( hThread );
+	::VirtualFreeEx( m_hProcess, pLibRemote, sizeof(InjectCode), MEM_RELEASE );
+
+	return TRUE;
+}
+
+void CHookTestDlg::OnBnClickedButtonHook()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	if (m_nHandle)
+	{
+		DWORD cpid;
+
+		GetWindowThreadProcessId((HWND)m_nHandle,&cpid);
+		m_hProcess=OpenProcess(PROCESS_ALL_ACCESS,false,cpid);
+		if (m_hProcess == 0)
+		{
+			::MessageBox(NULL,"没有选定目标！",NULL,MB_OK|MB_ICONERROR);
+		}
+		else
+		{
+			if (Inject())
+			{
+				//this->OnOK();
+			}
+		}
+	}
+}
