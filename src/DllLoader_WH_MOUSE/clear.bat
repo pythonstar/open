@@ -1,0 +1,15 @@
+del /a /s /q /f *.ncb
+del /a /s /q /f *.suo
+del /a /s /q /f *.user
+del /a /s /q /f *.ilk
+del /a /s /q /f *.ojb
+del /a /s /q /f *.pch
+del /a /s /q /f *.pdb
+del /a /s /q /f *.manifest
+del /a /s /q /f *.dep
+del /a /s /q /f *.obj
+del /a /s /q /f *.aps
+del /a /s /q /f *.res
+del /a /s /q /f *.idb
+del /a /s /q /f *.htm
+del /a /s /q /f *.old
