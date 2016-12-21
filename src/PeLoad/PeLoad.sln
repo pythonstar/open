@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PeLoad", "PeLoad.vcproj", "{727EACCB-5A4C-4720-ABEF-3DA77D109F30}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dll", "Dll\HookSpyDll.vcproj", "{8E710A64-39C2-4E75-878B-FE45C9BD9D9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727EACCB-5A4C-4720-ABEF-3DA77D109F30}.Debug|Win32.ActiveCfg = Debug|Win32
+		{727EACCB-5A4C-4720-ABEF-3DA77D109F30}.Debug|Win32.Build.0 = Debug|Win32
+		{727EACCB-5A4C-4720-ABEF-3DA77D109F30}.Release|Win32.ActiveCfg = Release|Win32
+		{727EACCB-5A4C-4720-ABEF-3DA77D109F30}.Release|Win32.Build.0 = Release|Win32
+		{8E710A64-39C2-4E75-878B-FE45C9BD9D9A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8E710A64-39C2-4E75-878B-FE45C9BD9D9A}.Debug|Win32.Build.0 = Debug|Win32
+		{8E710A64-39C2-4E75-878B-FE45C9BD9D9A}.Release|Win32.ActiveCfg = Release|Win32
+		{8E710A64-39C2-4E75-878B-FE45C9BD9D9A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
