@@ -12,3 +12,4 @@ del /a /s /q /f *.aps
 del /a /s /q /f *.res
 del /a /s /q /f *.idb
 del /a /s /q /f *.htm
+del /a /s /q /f *.old

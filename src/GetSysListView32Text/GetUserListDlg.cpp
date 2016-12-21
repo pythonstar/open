@@ -80,6 +80,7 @@ void CGetUserListDlg::OnBnClickedButton2()
 	LV_COLUMN  lvColumn;
 	TCHAR ItemBuf[512], *pItemOrColumn, *pBuffer;
 	BOOL bRet = FALSE;
+	BOOL bUnicode = FALSE;
 
 	while(m_lstCopyed.DeleteColumn(0));
 	m_lstCopyed.DeleteAllItems();
@@ -87,6 +88,7 @@ void CGetUserListDlg::OnBnClickedButton2()
 	if (m_btnShoot.m_hHandle)
 	{
 		lstCtrl.m_hWnd=m_btnShoot.m_hHandle;
+		bUnicode = ::IsWindowUnicode(lstCtrl.m_hWnd);
 		GetWindowThreadProcessId(m_btnShoot.m_hHandle, &PID); 
 		hProcess=OpenProcess(PROCESS_ALL_ACCESS,false,PID);
 		if (!hProcess)
@@ -113,9 +115,14 @@ void CGetUserListDlg::OnBnClickedButton2()
 					MessageBox(_T("WriteProcessMemory failed!")); 
 				}
 				for(int i=0; i<nColumnCnt; i++) {
-					bRet = ::SendMessage(lstCtrl.m_hWnd, LVM_GETCOLUMN, (WPARAM)i, (LPARAM)pItemOrColumn);
+					if ( bUnicode==TRUE ) {
+						bRet = ::SendMessageW(lstCtrl.m_hWnd, LVM_GETCOLUMN, (WPARAM)i, (LPARAM)pItemOrColumn);
+					}else{
+						bRet = ::SendMessageA(lstCtrl.m_hWnd, LVM_GETCOLUMN, (WPARAM)i, (LPARAM)pItemOrColumn);
+					}
 					bRet = ReadProcessMemory(hProcess, pBuffer, ItemBuf, 512, NULL);
-					m_lstCopyed.InsertColumn(i, ItemBuf);
+					strText = ItemBuf;
+					m_lstCopyed.InsertColumn(i, strText);
 					m_lstCopyed.SetColumnWidth(i, 80);
 				}
 
@@ -131,9 +138,14 @@ void CGetUserListDlg::OnBnClickedButton2()
 					{
 						lvitem.iSubItem = nSubItem;
 						bRet = WriteProcessMemory(hProcess, pItemOrColumn, &lvitem, sizeof(LVITEM), NULL);
-						bRet = ::SendMessage(lstCtrl.m_hWnd, LVM_GETITEMTEXT, (WPARAM)i, (LPARAM)pItemOrColumn);
+						if ( bUnicode==TRUE ) {
+							bRet = ::SendMessageW(lstCtrl.m_hWnd, LVM_GETITEMTEXT, (WPARAM)i, (LPARAM)pItemOrColumn);
+						}else{
+							bRet = ::SendMessageA(lstCtrl.m_hWnd, LVM_GETITEMTEXT, (WPARAM)i, (LPARAM)pItemOrColumn);
+						}
 						bRet = ReadProcessMemory(hProcess,pBuffer,ItemBuf,512,NULL);
-						m_lstCopyed.SetItemText(i,nSubItem,ItemBuf);
+						strText = ItemBuf;
+						m_lstCopyed.SetItemText(i,nSubItem,strText);
 					}
 				}
 				//ÊÍ·ÅÄÚ´æ 
