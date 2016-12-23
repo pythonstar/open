@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "inject", "inject\inject.vcproj", "{C8435C00-F7F5-4B42-9C49-6C903685D053}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Loader", "Loader\Loader.vcproj", "{20683013-2FCF-4D7E-B76F-205E7E0A8F4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8435C00-F7F5-4B42-9C49-6C903685D053}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C8435C00-F7F5-4B42-9C49-6C903685D053}.Debug|Win32.Build.0 = Debug|Win32
+		{C8435C00-F7F5-4B42-9C49-6C903685D053}.Release|Win32.ActiveCfg = Release|Win32
+		{C8435C00-F7F5-4B42-9C49-6C903685D053}.Release|Win32.Build.0 = Release|Win32
+		{20683013-2FCF-4D7E-B76F-205E7E0A8F4C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{20683013-2FCF-4D7E-B76F-205E7E0A8F4C}.Debug|Win32.Build.0 = Debug|Win32
+		{20683013-2FCF-4D7E-B76F-205E7E0A8F4C}.Release|Win32.ActiveCfg = Release|Win32
+		{20683013-2FCF-4D7E-B76F-205E7E0A8F4C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

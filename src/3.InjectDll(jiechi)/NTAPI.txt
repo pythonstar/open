@@ -1,0 +1,7 @@
+int (__stdcall *pNtProtectVirtualMemory)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD)
+int (__stdcall *pNtWriteVirtualMemory)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD)
+int (__stdcall *pNtFreeVirutalMemory)(_DWORD, _DWORD, _DWORD, _DWORD)
+int (__stdcall *pNtOpenProcess)(_DWORD, _DWORD, _DWORD, _DWORD)
+int (__stdcall *pNtAllocateVirtualMemory)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD)
+int (__stdcall *pNtQueryVirtualMemory)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD)
+int (__stdcall *pNtReadVirtualMemory)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD)
