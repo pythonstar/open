@@ -1,0 +1,274 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\DuplicateFileFinder.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""afxres.rc""     // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\DuplicateFileFinder.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_MAIN DIALOGEX 0, 0, 537, 385
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_LIST_ALBUM,"SysListView32",LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | LVS_AUTOARRANGE | WS_BORDER | WS_TABSTOP,5,52,514,312
+    CONTROL         "全选",IDC_CHECK_SELECT_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,497,38,33,10
+    LTEXT           "查找结果：",IDC_STATIC_FIND_RESULT,5,40,41,8
+    PUSHBUTTON      "全盘查找",IDC_BUTTON_SEARCH_ALL,5,5,69,30
+    PUSHBUTTON      "自定义目录查找",IDC_BUTTON_SEARCH_CUSTOM,76,5,69,30
+    PUSHBUTTON      "暂停",IDC_BUTTON_PAUSE,147,5,69,30
+    PUSHBUTTON      "停止",IDC_BUTTON_STOP,218,5,69,30
+    LTEXT           "静态",IDC_STATIC_CURRENT_FILE,20,367,503,8
+    CONTROL         "",IDC_ANIMATE1,"SysAnimate32",ACS_CENTER | ACS_TRANSPARENT | WS_BORDER | WS_TABSTOP,5,367,10,10
+    PUSHBUTTON      "设置",IDC_BUTTON_SETTING,492,5,29,14
+END
+
+IDD_DIALOG_CUSTOM_AREA DIALOGEX 0, 0, 339, 169
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自定义查找目录--可以直接拖放文件夹进来"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,228,148,50,14
+    PUSHBUTTON      "取消",IDCANCEL,282,148,50,14
+    CONTROL         "",IDC_LIST_AREA,"SysListView32",LVS_REPORT | LVS_SHAREIMAGELISTS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,7,325,140
+    PUSHBUTTON      "添加",IDC_BUTTON_ADD_FOLDER,7,148,50,14
+    PUSHBUTTON      "删除",IDC_BUTTON_DEL_FOLDER,61,148,50,14
+END
+
+IDD_DIALOG_SETTINGS DIALOGEX 0, 0, 314, 169
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,126,143,42,19
+    CONTROL         "",IDC_LIST_FILE_TYPE,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,15,300,126
+    LTEXT           "选择查找文件类型：",IDC_STATIC_SEL_FIND_TYPE,7,7,73,8
+END
+
+IDD_DIALOG_FIND_TYPE DIALOGEX 0, 0, 186, 94
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置查找类型"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,35,73,50,14
+    PUSHBUTTON      "取消",IDCANCEL,100,73,50,14
+    LTEXT           "查找方案名称：",IDC_STATIC,7,7,58,8
+    EDITTEXT        IDC_EDIT1,7,16,172,14,ES_AUTOHSCROLL
+    LTEXT           "查找文件类型：",IDC_STATIC,7,37,58,8
+    EDITTEXT        IDC_EDIT2,7,46,172,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "FileDescription", "重复文件查找器"
+            VALUE "FileVersion", "1.0"
+            VALUE "InternalName", "DuplicateFileFinder.exe"
+            VALUE "OriginalFilename", "DuplicateFileFinder.exe"
+            VALUE "ProductName", "重复文件查找器"
+            VALUE "ProductVersion", "1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CUSTOM_AREA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 332
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DIALOG_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DIALOG_FIND_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_FILE_OPERATION MENU 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "打开文件所在目录",                    ID_MENU_LOCATE_FILE
+        MENUITEM "删除文件",                        ID_MENU_DEL_FILE
+    END
+END
+
+IDR_MENU_AREA_OPERATION MENU 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "添加",                          IDC_BUTTON_ADD_FOLDER
+        MENUITEM "删除",                          IDC_BUTTON_DEL_FOLDER
+    END
+END
+
+IDR_MENU_FIND_TYPE MENU 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "添加查找方案",                      ID_MENU_ADD_FIND_TYPE
+        MENUITEM "修改查找方案",                      ID_MENU_UPDATE_FIND_TYPE
+        MENUITEM SEPARATOR
+        MENUITEM "删除查找方案",                      ID_MENU_DEL_FIND_TYPE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AVI
+//
+
+IDR_AVI_FIND_FILE       AVI                     "res\\findfile.avi"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 DuplicateFileFinder(&A)..."
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\DuplicateFileFinder.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "afxres.rc"     // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
